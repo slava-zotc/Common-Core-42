@@ -68,7 +68,10 @@ void	check_copy_int(int *arr, int index)
 		while (j < index)
 		{
 			if (arr[i] == arr[j])
+			{
+				free(arr);
 				print_error();
+			}
 			j++;
 		}
 		i++;

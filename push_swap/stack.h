@@ -41,7 +41,7 @@ void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 int		count_str_argv(char **str);
 void	free_split(char **arr);
-long	ft_atoi_ower(const char *str);
+int		ft_atoi_ower(const char *str);
 int		is_valid_sign(char *argv, int j);
 void	print_error(void);
 void	print_stack(t_stack *stack, const char *name);

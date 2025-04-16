@@ -15,13 +15,19 @@
 static	void	free_stack(t_stack *a)
 {
 	t_stack	*tmp;
-	
+
 	while (a)
 	{
 		tmp = a->next;
 		free(a);
 		a = tmp;
 	}
+}
+
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 int	main(int argc, char **argv)

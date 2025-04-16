@@ -37,42 +37,47 @@ void	free_split(char **arr)
 
 int	is_valid_sign(char *argv, int j)
 {
-	return ((argv[j] == '-' || argv[j] == '+') 
+	return ((argv[j] == '-' || argv[j] == '+')
 		&& (j == 0 || argv[j - 1] == ' ')
 		&& ft_isdigit(argv[j + 1]));
 }
 
-void	print_error(void)
+static int	parse_sign(const char *str, size_t *i)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	int	sign;
+
+	sign = 1;
+	if (str[*i] == '-' || str[*i] == '+')
+	{
+		if (str[*i] == '-')
+			sign = -1;
+		(*i)++;
+	}
+	return (sign);
 }
 
-long	ft_atoi_ower(const char *str)
+int	ft_atoi_ower(const char *str)
 {
 	size_t			i;
 	int				sign;
 	long			res;
+	long			prev;
 
 	i = 0;
-	sign = 1;
 	res = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
+	sign = parse_sign(str, &i);
 	while (ft_isdigit(str[i]) != 0)
 	{
+		prev = res;
 		res = (str[i] - '0') + (res * 10);
+		if (res / 10 != prev)
+			print_error();
 		i++;
 	}
-	if (res * sign > INT_MAX || res * sign < INT_MIN)
+	res *= sign;
+	if ((int)res != res)
 		print_error();
-	return (res * sign);
+	return ((int)res);
 }
