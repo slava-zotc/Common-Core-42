@@ -6,7 +6,7 @@
 /*   By: vzots <vzots@student.42yerevan.am>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:57:13 by vzots             #+#    #+#             */
-/*   Updated: 2025/04/14 16:32:57 by vzots            ###   ########.fr       */
+/*   Updated: 2025/04/15 19:05:56 by vzots            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,17 @@ void	ss(t_stack **a, t_stack **b);
 int		count_str_argv(char **str);
 void	free_split(char **arr);
 long	ft_atoi_ower(const char *str);
-int		isvalid_minus(char *argv, int j);
+int		is_valid_sign(char *argv, int j);
 void	print_error(void);
 void	print_stack(t_stack *stack, const char *name);
 int		*validator(char **argv, int argc, int *count_number);
 int		*normalize_input(int *arr, int size);
 void	init_and_fill_stack(t_stack **a, t_stack **b, int *indexed, int size);
 void	chunk_sort(t_stack **a, t_stack **b, int size);
+int		get_stack_size(t_stack *stack);
+int		find_max_pos(t_stack *stack);
+int		is_sorted(t_stack *stack);
+void	smart_push_back(t_stack **b, t_stack **a);
+int		find_position_in_range(t_stack *a, int min, int max);
+void	rotate_stack_to_top(t_stack **a, int pos);
 #endif

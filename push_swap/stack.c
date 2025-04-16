@@ -6,7 +6,7 @@
 /*   By: vzots <vzots@student.42yerevan.am>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 17:36:13 by vzots             #+#    #+#             */
-/*   Updated: 2025/04/10 17:36:14 by vzots            ###   ########.fr       */
+/*   Updated: 2025/04/15 18:44:50 by vzots            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new_stack)
 		last_stack->next = new_stack;
 	}
 }
-
 
 t_stack	*ft_stacklast(t_stack *stack)
 {
@@ -65,4 +64,17 @@ void	init_and_fill_stack(t_stack **a, t_stack **b, int *indexed, int size)
 		ft_stack_add_back(a, new);
 		i++;
 	}
+}
+
+int	get_stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }

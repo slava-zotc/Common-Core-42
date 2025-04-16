@@ -1,18 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vzots <vzots@student.42yerevan.am>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 18:34:24 by vzots             #+#    #+#             */
+/*   Updated: 2025/04/15 19:05:42 by vzots            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "stack.h"
 
-int count_str_argv(char **str)
+int	count_str_argv(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }
 
 void	free_split(char **arr)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (arr[i])
 	{
 		free(arr[i]);
@@ -21,13 +35,14 @@ void	free_split(char **arr)
 	free(arr);
 }
 
-int	isvalid_minus(char *argv, int j)
+int	is_valid_sign(char *argv, int j)
 {
-	return (argv[j] == '-' && (j == 0 || argv[j - 1] == ' ')
-			&& ft_isdigit(argv[j + 1]));
+	return ((argv[j] == '-' || argv[j] == '+') 
+		&& (j == 0 || argv[j - 1] == ' ')
+		&& ft_isdigit(argv[j + 1]));
 }
 
-void print_error()
+void	print_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
@@ -61,4 +76,3 @@ long	ft_atoi_ower(const char *str)
 		print_error();
 	return (res * sign);
 }
-

@@ -6,7 +6,7 @@
 /*   By: vzots <vzots@student.42yerevan.am>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:40:17 by vzots             #+#    #+#             */
-/*   Updated: 2025/04/10 16:42:43 by vzots            ###   ########.fr       */
+/*   Updated: 2025/04/15 19:29:02 by vzots            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static int	*arr_indexfy(int *sorted, int size, int *arr)
 
 int	*normalize_input(int *arr, int size)
 {
+	int	*indexed;
 	int	*sorted;
 	int	i;
 
@@ -82,6 +83,7 @@ int	*normalize_input(int *arr, int size)
 		i++;
 	}
 	bubble_sort(sorted, size);
-	sorted = arr_indexfy(sorted, size, arr);
-	return (sorted);
+	indexed = arr_indexfy(sorted, size, arr);
+	free(sorted);
+	return (indexed);
 }

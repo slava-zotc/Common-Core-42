@@ -6,7 +6,7 @@
 /*   By: vzots <vzots@student.42yerevan.am>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 17:31:32 by vzots             #+#    #+#             */
-/*   Updated: 2025/04/10 17:31:33 by vzots            ###   ########.fr       */
+/*   Updated: 2025/04/15 18:43:46 by vzots            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_swap_stack(t_stack **stack)
 		return ;
 	first = *stack;
 	second = first->next;
-
 	first->next = second->next;
 	second->next = first;
 	*stack = second;

@@ -6,7 +6,7 @@
 /*   By: vzots <vzots@student.42yerevan.am>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 19:02:35 by vzots             #+#    #+#             */
-/*   Updated: 2025/04/07 17:59:40 by vzots            ###   ########.fr       */
+/*   Updated: 2025/04/15 18:46:39 by vzots            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_perror(char *msg)
 {
 	ft_putstr_fd("Error: ", 2);
 	ft_putstr_fd(msg, 2);
-	ft_putchar_fd('\n',2);
+	ft_putchar_fd('\n', 2);
 }

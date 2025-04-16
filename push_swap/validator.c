@@ -6,7 +6,7 @@
 /*   By: vzots <vzots@student.42yerevan.am>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:43:40 by vzots             #+#    #+#             */
-/*   Updated: 2025/04/10 16:47:22 by vzots            ###   ########.fr       */
+/*   Updated: 2025/04/15 19:06:05 by vzots            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	is_digit_argv(int argc, char **argv)
 				j++;
 				continue ;
 			}
-			if (isvalid_minus(argv[i], j))
+			if (is_valid_sign(argv[i], j))
 			{
 				j++;
 				continue ;
